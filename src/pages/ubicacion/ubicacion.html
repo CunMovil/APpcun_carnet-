@@ -1,0 +1,24 @@
+<ion-header >
+  <ion-navbar color="primary" >
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title end>Sedes Cun</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div #map id="map"></div>
+  <div #panel id=panel >
+    <ion-item>
+      <ion-label >llevame a la ..</ion-label>
+      <ion-select interface="alert"  [(ngModel)]="sedeNavigator" id="end"  (ionChange)="onChangeHandler($event)">      
+        <ion-option  *ngFor="let sede of sedes" value="{{sede.lat}} {{sede.lng}}">{{sede.nombre}}</ion-option>      
+      </ion-select>
+    </ion-item>
+    <button ion-button block (click)="navegar()" icon-only>Vamos... </button> 
+  </div>
+</ion-content>

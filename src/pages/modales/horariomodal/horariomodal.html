@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-buttons end>
+      <button icon-only ion-button (click) ="closemodal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title color="primary" end>Clases</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card id="contetCardH" *ngFor='let materia of materias '>
+    <ion-card-header>
+      <h1 class="materiaH">{{materia.NOM_MATERIA}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="time"></ion-icon>
+        <p class="texDeta"><b>Hora:</b>  {{materia.HORA_INICIAL}} - {{materia.HORA_FINAL}}</p>
+      </ion-item>
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="pin"></ion-icon>
+        <p class="texDeta"><b>Sede:</b> {{materia.NOM_SEDE}} - {{materia.NOM_AULA.split(' ')[1]}}</p>
+      </ion-item>        
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="home"></ion-icon>
+        <p class="texDeta"><b>Salon: </b> {{materia.NOM_AULA.split(' ')[2]}}</p>
+      </ion-item>
+      <ion-item class="DetaG"> 
+        <ion-icon class="iconDeta" name="person"></ion-icon>
+        <p class="texDeta"><b>Docente:</b>  {{materia.NOMBRE_DOCENTE}}</p>
+      </ion-item> 
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="contacts"></ion-icon>
+        <p class="texDeta"><b>Grupo:</b>  {{materia.NUM_GRUPO}}</p>
+      </ion-item>
+      <ion-item class="DetaG">
+        <ion-icon name="information-circle" class="help" (click)="showAlert(materia)"></ion-icon> 
+        <ion-icon name="locate" class="help" (click)="openUbicacion()"></ion-icon>           
+      </ion-item> 
+    </ion-card-content>    
+  </ion-card>  
+    <!-- Modal cards -->
+  <ion-card id="contetCardH" *ngFor='let materia of materiasVirtuales '>
+    <ion-card-header>
+      <h1 class="materiaH">{{materia.NOM_MATERIA}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="time"></ion-icon>
+        <p class="texDeta"><b>Fecha Inicio:</b>  {{materia.FEC_INICIO}} </p>
+      </ion-item>
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="beer"></ion-icon>
+        <p class="texDeta"><b>Fecha fin:</b> {{materia.FEC_FIN}} </p>
+      </ion-item>        
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="school"></ion-icon>
+        <p class="texDeta"><b>Unidad:</b>  {{materia.NOM_UNIDAD}}</p>
+      </ion-item>
+      <ion-item class="DetaG"> 
+        <ion-icon class="iconDeta" name="person"></ion-icon>
+        <p class="texDeta"><b>Docente:</b>  {{materia.NOMBRE_DOCENTE}}</p>
+      </ion-item> 
+      <ion-item class="DetaG">
+        <ion-icon class="iconDeta" name="contacts"></ion-icon>
+        <p class="texDeta"><b>Grupo:</b>  {{materia.NUM_GRUPO}}</p>
+      </ion-item>
+      <ion-item class="DetaG">
+       <button ion-button icon-start block color="third" (click)="abrirMediacionVirtual()" > <ion-icon name="globe"  ></ion-icon> Mediacion Virtual</button>
+      </ion-item> 
+    </ion-card-content>    
+  </ion-card>
+</ion-content>

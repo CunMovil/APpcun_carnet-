@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-navbar color="primary" >
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title end>Noticias</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let post of wpPosts" >
+    <ion-card-content >
+      <ion-card-title [innerHTML]="post.title.rendered" color="secondary"></ion-card-title>
+      <p id="ptext"  [innerHTML]="post.excerpt.rendered"></p>
+    </ion-card-content>
+    <ion-row no-padding>
+       <ion-col >
+         <button ion-button clear small  icon-start>
+           <p>{{post.date.split('T')[0]}} </p>
+         </button>
+       </ion-col>
+       <ion-col text-right>
+         <button ion-button small color="secondary"  (click)="postTapped($event, post)" icon-start>
+            ¡Leer más!
+         </button>
+       </ion-col>
+     </ion-row>
+  </ion-card>
+  <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more posts ...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

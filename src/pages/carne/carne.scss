@@ -1,0 +1,28 @@
+page-carne {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+     }
+     .footerCarne {
+        padding: 16px;
+        color: whitesmoke;
+    }
+    .textFooter {
+        text-align: left;
+        font-size: 14px; 
+        font-weight: inherit !important;        
+    }
+    .datosC {
+      text-align: left !important;
+    }
+    .codigo {
+        margin: 45px 90px;
+    }
+    .carnetCard {
+        background-color: color($colors,ghost)!important;
+    }
+}

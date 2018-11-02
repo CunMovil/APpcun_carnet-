@@ -1,0 +1,70 @@
+<ion-menu side="left" type="overlay"  [content]="content">
+  <ion-content class="sideMenuCun">   
+    <ion-list> 
+      <div class="bgProfile"> 
+        <img src="{{imageUrl}}" class="imgProfile" >
+        <h2 align='center'>{{givenName}}</h2>
+        <h6 align='center'>{{email}}</h6>
+      </div>
+      <button ion-button block  (click)="sedesPush({component:'UbicacionPage'})" menuToggle  >
+        <ion-icon name="locate" class="buttonProfile" ></ion-icon>
+        Sedes Cun
+      </button> 
+      <button ion-item (click)="signOut()" menuToggle> 
+        <button ion-button block >
+            <ion-icon name="log-out" class="buttonProfile" ></ion-icon>
+            Cerrar Sesion         
+        </button> 
+      </button>
+      <ion-item>         
+        <button ion-button menuClose detail-none outline item-end >Cerrar Menu</button>
+      </ion-item>
+    </ion-list>  
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>
+<ion-header>
+  <ion-toolbar color="primary">
+    <button class="splashlogo" menuToggle block></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col   col-4 [ngClass]="{'padding':i >2}" *ngFor="let button of currentButtons; let i = index" (click)="openPage(button.page)">        
+        <div ion-button block [ngClass]="{'verdeClaro':i%2 == 0, 'verdeOscuro': i%2 !== 0 }"  >
+            <img *ngIf="button.candado " class="candadoIco" [src]="button.candado" alt="">     
+            <div> <img class="ImagenBoton" [src]="button.imagen" > </div>
+            <div class="nombreBoton"><p >{{ button.nombre }}</p></div>
+        </div>   
+      </ion-col>    
+    </ion-row>
+  </ion-grid >
+</ion-content>
+<ion-footer no-border>
+  <ion-navbar > 
+    <img  class="imagenFooter" src="assets/img/pie-de-pagina1.png" alt="">
+    <div class="iconFooter">
+      <ion-grid class="footerGrid">
+        <ion-row>
+          <ion-col col-2>
+            <img class="iconFooter" src="assets/img/19noticias.png" (click)="noticiasPush()"/>
+          </ion-col>
+          <ion-col col-2>
+            <img class="iconFooter" src="assets/img/20sedes.png" (click)="sedesPush()"/>
+          </ion-col>
+          <ion-col col-4>
+            <img class="iconU" src="assets/img/21cun.png" />
+          </ion-col>
+          <ion-col col-2 >       
+            <img class="iconFooter" src="assets/img/22directorio.png" (click)="directorioPush()" />
+          </ion-col>
+          <ion-col col-2>
+             <ion-badge class="badge" [hidden]= "contador" >{{Notificaciones}}</ion-badge>
+          <img class="iconFooter" src="assets/img/23notificaciones.png" (click)="notificaciones()"/> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>     
+    </div> 
+  </ion-navbar>
+</ion-footer>

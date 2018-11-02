@@ -1,0 +1,19 @@
+page-noticias {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+    }
+    .contentText {
+        color: color($colors,ghost)
+    }
+    ion-card {
+        background-color:rgb(226, 218, 218)!important;
+    }
+    a {
+        display: none;
+    }
+}

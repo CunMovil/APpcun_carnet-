@@ -1,0 +1,35 @@
+<ion-header >
+  <ion-navbar >
+    <ion-buttons end>
+      <button icon-only ion-button [hidden]="bibliotecaBotones" (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+      <button icon-only ion-button (click) ="closeIframe()" [hidden]="!bibliotecaBotones">
+          <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title end>{{ 'PAGE_PAGO_TITLE' | translate }}</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid [hidden]="bibliotecaBotones">
+      <ion-row>
+        <ion-col col-6 >
+          <button class="pagosPec" (click)="pagosPecLink()">
+            <ion-icon class="iconPrice" name="pricetags"></ion-icon>
+            <p>{{ 'PAGE_PAGO_BUTTONPEC' | translate }}</p>
+          </button>  
+        </ion-col>                
+      </ion-row>
+      <ion-row>
+        <ion-col col-6 >
+          <button class="pagosPec" (click)="estadoCuenta()">
+            <img src="assets/img/estado-cuenta.png" width="70px" height="70px"/>
+            <p>{{ 'PAGE_PAGO_CUENTA' | translate }}</p>
+          </button>  
+        </ion-col>                
+        </ion-row> 
+    </ion-grid >
+</ion-content>

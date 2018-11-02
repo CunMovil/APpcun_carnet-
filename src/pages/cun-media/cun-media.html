@@ -1,0 +1,24 @@
+<ion-header >
+  <ion-navbar color="primary" >
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title end>{{ 'PAGE_CUNMEDIA_TITLE' | translate }}</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding > 
+  <img src="assets/img/cunmedia.png" aling="center" class="imgCunMedia">
+  <div id="mp3_player">  
+    <canvas id="analyzer"></canvas> 
+  </div>
+  <div class="iconoApagar" (click)="play()" [hidden]="prueba"  >
+    <img class="imgApagar" name="play"  src="assets/img/apagado.png">
+  </div> 
+  <div class="iconoApagar" (click)="pause()" *ngIf="prueba">
+    <img class="imgApagar" name="pause"  src="assets/img/encendido.png">
+  </div> 
+</ion-content>

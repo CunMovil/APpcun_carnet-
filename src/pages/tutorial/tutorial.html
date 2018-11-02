@@ -1,0 +1,25 @@
+<ion-header no-shadow>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="secondary">{{ 'TUTORIAL_SKIP_BUTTON' | translate}}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-bounce>
+  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)" effect="cube" speed=600 >
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image" />
+      <h2 class="slide-title" [innerHTML]="slide.title" style="color:#007d64"></h2>
+      <p [innerHTML]="slide.description" ></p>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-5.png" class="slide-image" />
+      <h2 class="slide-title" style="color:#007d64">{{ 'TUTORIAL_SLIDE5_TITLE'| translate }}</h2>
+      <p>{{ 'TUTORIAL_SLIDE5_DESCRIPTION'| translate }}</p>
+      <button ion-button icon-end large clear (click)="startApp()" color="ghost">
+        {{ 'TUTORIAL_CONTINUE_BUTTON' | translate }}
+        <ion-icon name="arrow-forward" ></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

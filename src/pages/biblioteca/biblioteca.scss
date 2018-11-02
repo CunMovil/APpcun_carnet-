@@ -1,0 +1,54 @@
+page-biblioteca {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+     }
+     .bibliotecaU {
+        height: 130px !important;
+        width: 100%;
+        background-color:color($colors, secondary) !important;
+        color:color($colors, light) !important;
+        font-size: 12px;
+        margin: 56px 89px;
+        border-radius: 8px;
+        box-shadow: 0 8px 2px 0 rgba(0, 0, 0, 0.3) ,
+                0 3px 1px -2px rgba(0, 0, 0, 0.3) ,
+                0 1px 5px 0 rgba(0, 0, 0, 0.3) !important;
+    }    
+    .bibliotecaC {
+        height: 130px !important;
+        width: 100%;    
+        margin: 8px 89px;
+        color:color($colors, light) !important;
+        font-size: 12px;
+        background-color:color($colors, third) !important;
+        border-radius: 8px;
+        box-shadow: 0 8px 2px 0 rgba(0, 0, 0, 0.3) ,
+                0 3px 1px -2px rgba(0, 0, 0, 0.3) ,
+                0 1px 5px 0 rgba(0, 0, 0, 0.3) !important;
+    }
+    .iconB {
+        font-size: 7.0em !important;
+        color:color($colors, light) !important;
+    }
+    .iframeBiblioteca {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .help {
+        color:color($colors, yellowIcon) !important;
+        font-size: 1.8em;
+        float: right;
+        position: absolute;
+        top:14%;
+        right:29%;
+    }
+    .alertClass {
+        background-color: red !important;
+        color :red !important;
+    }
+}

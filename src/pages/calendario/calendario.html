@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'PAGE_CALENDARIO_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="has-header">
+  <ion-calendar  class="calend"
+                [options]="optionsMulti"
+                [type]="type"
+                [format]="'YYYY-MM-DD'"
+                (monthChange)="dataMesFn($event)"
+  ></ion-calendar>
+  <ion-card class="calendarCard">    
+    <ion-card-header>
+      <p class="titleEven"><b> {{ 'PAGE_CALENDARIO_EVENT' | translate }}</b></p> 
+    </ion-card-header>    
+    <ion-card-content>
+      <div ion-item *ngFor="let item of dataMes" >
+        <div class="pDia" >                   
+          <ion-icon name="people" item-start [ngClass]="{'oa':item.cssClass == 'oa', 'op': item.cssClass == 'op','cc':item.cssClass =='cc','aa':item.cssClass == 'aa'}"></ion-icon>
+          <p class="itemB">{{item.fecha[8]}}{{item.fecha[9]}}</p>       
+          <p class="pMes"></p>
+          <p class="textCalendar">{{item.hora}}</p>
+        </div>        
+        <div class="bodyText" > 
+          <h3 class="titleEven"><b>{{item.titulo}}</b></h3>
+          <p class="textCalendar">{{item.descripcion}}</p>
+          <p class="textCalendar"><b>Hora: </b>{{item.hora}} - <b>Sede: </b>{{item.sede}}</p>
+          <p class="textCalendar"><b>Area: </b>{{item.area}}</p>
+          <p class="textCalendar"><b>Fecha inicial: </b>{{item.fecha}}</p>
+          <p class="textCalendar"><b>Fecha final:</b>{{item.fechaFin}} </p>
+        </div>         
+      </div> 
+    </ion-card-content>
+  </ion-card>    
+</ion-content>

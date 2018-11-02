@@ -1,0 +1,60 @@
+<ion-header >
+  <ion-navbar  >
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title end>{{ 'PAGE_CUNCAPSULA_TITLE' | translate }}</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="back">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+     <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card [hidden]="hideContent" *ngFor="let card of videoList; let i = index"  >
+    <ion-item>
+      <ion-avatar item-start>
+       <ion-icon ><img src="assets/img/student.png" alt=""></ion-icon>
+      </ion-avatar>
+      <h2  class="whiteText">{{card.name}}</h2> 
+      <p>{{card.created_time | date}}</p>
+      <hr>
+    </ion-item>
+    <div id="ebedVideo"></div>
+    <img  id="imgVideo" src="{{card.pictures.sizes[2].link_with_play_button}}" (click)="playVideo(card.files[0].link)" width="90%" height="150px" alt="">
+    <ion-card-content>
+      <p class="whiteText">{{card.description}}</p>
+    </ion-card-content>  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small >
+          <ion-icon name="eye" color="secondary"></ion-icon>
+          <div class="secondaryText">{{card.stats.plays}} Vistas</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small (click)="openCommentsModal(card.metadata.connections.comments)">
+          <ion-icon name="text" color="secondary" ></ion-icon>
+          <div class="secondaryText">{{card.metadata.connections.comments.total}} Comentarios</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-fab middle center>
+    <button ion-fab  (click)="openGallery()"  [hidden]= "showBtnGaleria" id="btnGaleria" color="danger"><ion-icon name="folder"></ion-icon></button>
+  </ion-fab>
+  <div class="textVideo"  [hidden]= "showBtnGaleria"><p>Elige tu video</p></div>
+  <div id="embed"  [hidden]="false">
+    <input type="file" id="tusInput" (change)="OnchangeInput($event)">
+  </div>
+  <ion-fab bottom right [hidden]= "hideBtnModal">
+    <button ion-fab    [hidden]= "hideBtnModal" color="danger"><ion-icon name="videocam" ></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab mini icon-only (click)="addVideoHd()"  [hidden]= "hideBtnModal" color="danger">HD</button>
+      <button ion-fab mini (click)="addVideo()"  [hidden]= "hideBtnModal" color="danger">LQ</button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

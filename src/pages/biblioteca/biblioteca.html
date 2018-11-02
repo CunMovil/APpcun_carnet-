@@ -1,0 +1,38 @@
+
+<ion-header >
+  <ion-navbar color="primary" hideBackButton="{{bibliotecaBotones}}" >
+    <ion-buttons end>
+      <button icon-only ion-button [hidden]="bibliotecaBotones" (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+      <button icon-only ion-button (click) ="closeIframe()" [hidden]="!bibliotecaBotones">
+          <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title end>{{ 'PAGE_BIBLIOTECA_TITLE' | translate }}</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <ion-grid [hidden]="bibliotecaBotones">
+    <ion-row>
+      <ion-col col-6 >
+        <button class="bibliotecaU" (click)="bibvirtual()">
+          <ion-icon class="iconB" name="bookmarks"></ion-icon>
+          <p>{{ 'PAGE_BIBLIOTECA_BUTTON_V' | translate }}</p>
+        </button>  
+      </ion-col>               
+    </ion-row> 
+    <ion-icon name="help" class="help" (click)="showInfo()"></ion-icon>  
+    <ion-row>
+      <ion-col col-6  (click)="bibcat()">
+        <button class="bibliotecaC" >
+          <ion-icon class="iconB" name="book"></ion-icon>
+          <p>{{ 'PAGE_BIBLIOTECA_BUTTON_C' | translate }}</p>
+        </button>            
+      </ion-col>
+    </ion-row>
+  </ion-grid >
+  <div id="frame" class="iframeBiblioteca" [hidden]="!bibliotecaBotones"></div>
+</ion-content>

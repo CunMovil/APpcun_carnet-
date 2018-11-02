@@ -1,0 +1,94 @@
+{
+  "BACK_BUTTON_TEXT": "Back",
+
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "LOGIN": "Sign in",
+  "SIGNUP": "Sign up",
+
+
+  "MAP_TITLE": "Map",
+
+  "TUTORIAL_SKIP_BUTTON": "Skip",
+  "TUTORIAL_CONTINUE_BUTTON": "Continue",
+
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to CUN Móvil.",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "All your services in one place.",
+
+   "TUTORIAL_SLIDE2_TITLE": "SCHEDULE AND NOTES",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Manage your schedule and your notes whenever you want.",
+
+  "TUTORIAL_SLIDE3_TITLE": "VIRTUAL PLATFORMS",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "Learn and reinforce your knowledge with the virtual platforms that are at your disposal.",
+
+  "TUTORIAL_SLIDE4_TITLE": "Entertainment",
+  "TUTORIAL_SLIDE4_DESCRIPTION": "Enjoy totally free games.",
+
+  "TUTORIAL_SLIDE5_TITLE": "COMMUNICATION",
+  "TUTORIAL_SLIDE5_DESCRIPTION": "Connect with the entire Cunista community and tell everyone What are you thinking?",
+
+  "WELCOME_INTRO": "Immerse yourself in the CUN!",
+
+  "SETTINGS_TITLE": "Settings",
+  "SETTINGS_OPTION1": "Option 1",
+  "SETTINGS_OPTION2": "Option 2",
+  "SETTINGS_OPTION3": "Option 3",
+  "SETTINGS_OPTION4": "Option 4",
+
+  "SETTINGS_PROFILE_BUTTON": "Edit Profile",
+
+  "SETTINGS_PAGE_PROFILE": "Edit Profile",
+
+  "WELCOME_TITLE": "Welcome",
+
+  "LOGIN_TITLE": "Sign in",
+  "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_BUTTON": "Sign in",
+  "SIGNUP_TITLE": "Sign up",
+  "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
+  "SIGNUP_BUTTON": "Sign up",
+
+  "DONE_BUTTON": "Done",
+  "CANCEL_BUTTON": "Cancel",
+  "DELETE_BUTTON": "Delete",
+
+  "TITLE_MENU_NOTAS":"Your notes",
+  "TITLE_MENU_CARNE":"Identity Card",
+  "TITLE_MENU_CALENDARIO":"Calendar",
+  "TITLE_MENU_VIRTUAL":"Cun Virtual",
+  "TITLE_MENU_HORARIO":"Your schedule",
+  "TITLE_MENU_CUNMEDIA":"Cun Media",
+  "TITLE_MENU_BIBLIOTECA":"Library",
+  "TITLE_MENU_CAPSULA":"Cun Capsule", 
+  "TITLE_MENU_EMPLEO":"Employment",
+  "TITLE_MENU_PAGO":"My Payments",
+
+
+  "PAGE_NOTAS_TITLE":"Notes",
+  "PAGE_NOTAS_ASIGNATURAS":"SUBJECTS",
+  "PAGE_NOTAS_BUTTON_TITLE":"QUICK CALCULATION",
+  "PAGE_NOTAS_BUTON_CALCULAR":"CALCULATE",
+  "PAGE_NOTAS_BUTON_CORTE1":"Cut 1",
+  "PAGE_NOTAS_BUTON_CORTE2":"Cut 2",
+
+  "PAGE_CARNE_TITLE":"Identity Card",
+  "PAGE_CARNE_CUN":"#IAMCUN",
+  "PAGE_CARNE_fOOTER_TEXT":"This card is unique and non-transferable, identifies the carrier and assumes the agreement of the holder with the conditions established by the institution.",
+
+  
+  "PAGE_CALENDARIO_TITLE":"Calendar",
+
+  "PAGE_CUNMEDIA_TITLE":"Cun Radio",
+
+  "PAGE_CUNCAPSULA_TITLE":"Cun Capsule",
+  
+  "PAGE_BIBLIOTECA_TITLE":"Library",
+  "PAGE_BIBLIOTECA_BUTTON_V":"Virtual Library",
+  "PAGE_BIBLIOTECA_BUTTON_C":"Library Catalog",
+
+  "PAGE_PAGO_TITLE":"My Payments",
+  "PAGE_PAGO_BUTTONPEC":"Pay",
+  "PAGE_PAGO_CUENTA":"Account status"
+}

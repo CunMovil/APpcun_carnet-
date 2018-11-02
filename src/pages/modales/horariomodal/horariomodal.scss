@@ -1,0 +1,64 @@
+page-horariomodal {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+     }
+    #contetCardH {
+        text-align: center;
+        background-color: color($colors, greefond) !important; 
+        border-radius: 0px !important;
+    }    
+    #contenB {
+        text-align: center;
+        width: 100%;
+    }
+    .materiaH {
+        text-align: center;
+        color:color($colors, yellowIcon) !important;
+        font-weight: bold !important;
+    }
+    .DetaG {
+       background-color: color($colors, greefond) !important; 
+    }
+    .iconDeta {
+        font-size: 2.0em !important;
+        color:color($colors, yellowIcon) !important;
+    }
+    .texDeta {
+        text-align: left;
+        color: white !important;
+        display: inline;
+        padding: 10px;
+    }
+    .help {
+        color:color($colors, yellowIcon) !important;
+        font-size: 1.8em;
+        float: right;
+    }
+    .alertDetallesA {
+        color:color($colors, light) !important;
+        text-align: left !important;
+        .alert-title {
+            color:color($colors, yellowIcon ) !important;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .alert-wrapper {
+            background-color:color($colors, secondary) !important;
+        } 
+    }
+    .textmodal {
+        color:color($colors, yellowIcon ) !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+        float: left;
+    }
+    .bOk {
+        font-weight: bold !important;
+        color:color($colors, yellowIcon) !important;
+    } 
+}

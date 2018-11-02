@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>InfoPost</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card id="cardInfoPost">
+    <img [src]="imgLink" alt="">
+    <ion-card-content>
+      <ion-card-title class="green">
+        {{post.title.rendered}}
+        </ion-card-title>
+      <p [innerHTML]="post.content.rendered"></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

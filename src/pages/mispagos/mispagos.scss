@@ -1,0 +1,30 @@
+page-mispagos {
+    .pagosPec {
+        height: 130px !important;
+        width: 100%;
+        background-color:color($colors, secondary) !important;
+        color:color($colors, light) !important;
+        font-size: 12px;
+        margin: 56px 89px;
+        border-radius: 8px;
+        box-shadow: 0 8px 2px 0 rgba(0, 0, 0, 0.3) ,
+                0 3px 1px -2px rgba(0, 0, 0, 0.3) ,
+                0 1px 5px 0 rgba(0, 0, 0, 0.3) !important;        
+    }
+    .estadoCta {
+        height: 130px !important;
+        width: 100%;    
+        margin: 8px 89px;
+        color:color($colors, light) !important;
+        font-size: 12px;
+        background-color:color($colors, third) !important;
+        border-radius: 8px;
+        box-shadow: 0 8px 2px 0 rgba(0, 0, 0, 0.3) ,
+                0 3px 1px -2px rgba(0, 0, 0, 0.3) ,
+                0 1px 5px 0 rgba(0, 0, 0, 0.3) !important;
+    }
+    .iconPrice {
+        font-size: 7.0em !important;
+        color:color($colors, light) !important;
+    }
+}

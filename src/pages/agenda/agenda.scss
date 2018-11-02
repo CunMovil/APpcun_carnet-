@@ -1,0 +1,24 @@
+page-agenda {
+    .toolbar-title {  
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+        font-weight: bolder;
+     }
+    #dtaDirec {
+        margin-top: 15px;
+    }    
+    #dtaDirec p {
+        text-align: left;
+        margin-left: 15px;
+    }
+    #dtaDirec span {
+       float: left;
+       color:color($colors, secondary);
+    }    
+    #dtaDirec img {
+     height: 30px;
+     margin: 30px 10px 3px 63px;
+    }    
+    .icontext {
+        text-align: center !important;
+    }    
+}

@@ -1,0 +1,91 @@
+{
+  "NAME": "Nombre",
+  "PASSWORD": "Contraseña",
+  "EMAIL": "Email",
+  "LOGIN": "Iniciar sesión",
+  "SIGNUP": "Registrarse",
+
+  "MAP_TITLE": "Mapa",
+  
+  "BACK_BUTTON_TEXT": "Atras",
+
+  "TUTORIAL_SKIP_BUTTON": "Omitir",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
+
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenido a CUN Móvil.",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "Todos tus servicios en un sólo lugar.",
+
+  "TUTORIAL_SLIDE2_TITLE": "HORARIO Y NOTAS",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Gestiona tu horario y tus notas en el momento que quieras.",
+
+  "TUTORIAL_SLIDE3_TITLE": "PLATAFORMAS VIRTUALES",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "Aprende y refuerza tus conocimientos con las plataformas virtuales que están a tu disposición.",
+
+  "TUTORIAL_SLIDE4_TITLE": "DIVERSIÓN",
+  "TUTORIAL_SLIDE4_DESCRIPTION": "Disfruta de juegos totalmente gratuitos.",
+
+  "TUTORIAL_SLIDE5_TITLE": "COMUNICACIÓN",
+  "TUTORIAL_SLIDE5_DESCRIPTION": "Conéctate con toda la comunidad Cunista y cuéntale a todos ¿Qué estás pensando?",
+
+  "WELCOME_INTRO": "¡Sumérgete en la CUN!",
+
+  "SETTINGS_TITLE": "Ajustes",
+  "SETTINGS_OPTION1": "Opción 1",
+  "SETTINGS_OPTION2": "Opción 2",
+  "SETTINGS_OPTION3": "Opción 3",
+  "SETTINGS_OPTION4": "Opción 4",
+
+  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+
+  "WELCOME_TITLE": "Bienvenido/a",
+
+  "LOGIN_TITLE": "Iniciar sesión",
+  "LOGIN_ERROR": "No se ha podido iniciar sesión. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
+  "LOGIN_BUTTON": "Iniciar sesión",
+  "SIGNUP_TITLE": "Registro",
+  "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
+  "SIGNUP_BUTTON": "Registrarse",
+
+  "LIST_MASTER_TITLE": "Items",
+
+  "ITEM_CREATE_TITLE": "Nuevo Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+
+
+  "TITLE_MENU_NOTAS":"Tus Notas",
+  "TITLE_MENU_CARNE":"Carné",
+  "TITLE_MENU_CALENDARIO":"Calendario",
+  "TITLE_MENU_VIRTUAL":"Cun Virtual",
+  "TITLE_MENU_HORARIO":"Tu Horario",
+  "TITLE_MENU_CUNMEDIA":"Cun Media",
+  "TITLE_MENU_BIBLIOTECA":"Biblioteca",
+  "TITLE_MENU_CAPSULA":"Cun Cápsula", 
+  "TITLE_MENU_EMPLEO":"Empleo",
+  "TITLE_MENU_PAGO":"Mis Pagos",
+
+  "PAGE_NOTAS_TITLE":"Notas",
+  "PAGE_NOTAS_ASIGNATURAS":"ASIGNATURAS",
+  "PAGE_NOTAS_BUTTON_TITLE":"CALCULO RÁPIDO",
+  "PAGE_NOTAS_BUTON_CALCULAR":"CALCULAR",
+  "PAGE_NOTAS_BUTON_CORTE1":"Corte 1",
+  "PAGE_NOTAS_BUTON_CORTE2":"Corte 2",
+
+  "PAGE_CARNE_TITLE":"Carné",
+  "PAGE_CARNE_CUN":"#YOSOYCUN",
+  "PAGE_CARNE_fOOTER_TEXT":"Este carné es unico e intransferible, identifica al portador y supone la conformidad del titular con las condiciones establecidas por la institución.",
+
+
+  "PAGE_CUNMEDIA_TITLE":"Cun Radio",
+
+  "PAGE_CUNCAPSULA_TITLE":"Cun Cápsula",
+
+  "PAGE_BIBLIOTECA_TITLE":"Biblioteca",
+  "PAGE_BIBLIOTECA_BUTTON_V":"Biblioteca Virtual",
+  "PAGE_BIBLIOTECA_BUTTON_C":"Biblioteca Catálogo",
+
+  "PAGE_PAGO_TITLE":"Mis Pagos",
+  "PAGE_PAGO_BUTTONPEC":"Pagar",
+  "PAGE_PAGO_CUENTA":"Estado de cuenta"
+
+
+}

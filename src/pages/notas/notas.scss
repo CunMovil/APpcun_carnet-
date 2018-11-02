@@ -1,0 +1,104 @@
+page-notas {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+     }     
+//.....................................................................Listado de notas..............................................//
+    #tablaNotas {
+        width: 100%;
+        padding: 1px;
+        margin-bottom: 8px;
+    }
+    thead {
+        color: color($colors, secondary);
+        padding: 3px;
+    }
+    #tablaNotas td {
+        font-size: 12px;
+    }
+
+    #corteNotas th {
+        padding: 10px;
+    }
+    tbody {
+        color: white;
+    }
+    #tablaBody td {    
+        border-left : 2px color($colors, secondary) solid;
+        padding: 5px 7px;
+        font-size: 12px;
+    }
+
+    #tablaBody td p:first-child {
+        text-align:left; 
+        color: color($colors, secondary);
+        float: left;
+        font-weight: bolder;
+    }
+    #tablaBody td:first-child {
+        border: none !important;
+    }
+    #tablaBody td:nth-child(1n+2)  {   
+        font-weight: bold;    
+    }
+    #tablaBody td p:nth-child(2)  {   
+        text-align: left;
+        color:color($colors, light);
+    }
+    #tablaBody tr td:nth-child(2) {
+        border: none !important;
+    }
+    .fondoTr{
+        background-color:rgb(3, 35, 39);
+    }
+    //............................................................... Calcular las notas..................................................................//
+
+    #calculoRapido  {
+        margin-top: 30px;
+        padding: 10px;
+        margin-bottom: 30px
+    }
+    #tituloCalculo {
+        float: left;
+        padding-bottom: 12px;
+    }
+    #notasCalculo td {
+        padding: 5px 10px;
+        border-bottom:  2px color($colors, secondary) solid;
+    }
+    .botonCalcular {
+        background-color: color($colors, secondary);
+        border-radius: 8px;
+        text-align: center;
+        float: right;
+        padding: 10px;
+    }
+    #notasCalculo td:first-child {
+        border: none !important;
+    }
+    #notasCalculo td:nth-child(3) {
+    border-bottom: none;
+    }
+    .button-ios {
+        font-size: 1.3rem;
+    }
+    .asignaturas {
+        font-weight: lighter !important;
+        color: #E7E1E0;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+    //................................................. footer Materia.......................................................//
+    #footerMateria {
+        padding: 20px;
+    }
+    #footerMateria p {
+    color:color($colors, secondary);
+    font-size: large;
+    font-weight: bold;
+    }
+}

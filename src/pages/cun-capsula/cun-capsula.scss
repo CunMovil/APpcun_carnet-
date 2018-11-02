@@ -1,0 +1,123 @@
+page-cun-capsula {
+    iframe{
+        width: fit-content !important;
+        height: 200px !important;
+        float: left;
+    }
+    #embed input[type=file] {
+        display: none;
+    }
+    #embed  {
+        display: none;
+    }    
+    #embed input[type=submit] {
+        position: absolute;
+        bottom:30%;
+        left:48%;
+        display: block;
+        width: 56px;
+        height: 56px;
+        background-color:  #007d64;
+        
+        border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        background-size: 40px;
+        background-image: url(../../assets/imgs/if_cloud-upload_298749.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }    
+    .fab-md-danger {
+        color: white;
+        background-color:  #258c68;
+        cursor: pointer;
+        box-shadow: 0 0 0 0 rgba( #007d64, .9);
+        -webkit-animation: pulse 1.8s infinite;
+    }
+    .fab-md-danger.activated {
+      color: greenyellow;
+      background-color:  #258c68;
+    }
+    .fab-ios-danger {
+      color: white;
+      background-color:  #007d64;
+      cursor: pointer;
+      box-shadow: 0 0 0 0 rgba( #007d64, .9);
+      -webkit-animation: pulse 1.8s infinite;
+    }
+    .fab-ios-danger.activated {
+      color: greenyellow;
+      background-color:  #007d64;
+    }
+    @-webkit-keyframes pulse { 
+      70% { 
+        box-shadow: 0 0 0 50px rgba(green, 0);
+      }
+      100% { 
+        box-shadow: 0 0 0 0 rgba(green, 0);
+      }
+    }      
+    .whiteText{
+        color: white;
+    }
+    .secondaryText{
+       color: color($colors, secondary);
+    }
+    .toolbar-title {
+  
+      text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+      font-weight: bolder;
+    }   
+}
+
+
+////////////////// Loading ////
+  $color-background: transparent;
+  $color-loader: color($colors,secondary);
+  body {
+    background: $color-background;
+  }
+  .loader {
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $color-loader;
+    letter-spacing: 0.2em;
+    
+    &::before, &::after {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: $color-loader;
+      position: absolute;
+      animation: load .7s infinite alternate ease-in-out;
+    }
+    
+    &::before {
+      top: 0;
+    }
+    
+    &::after {
+      bottom: 0;
+    }
+  }
+  @keyframes load {
+    0% { left: 0; height: 30px; width: 15px }
+    50% { height: 8px; width: 40px }
+    100% { left: 235px; height: 30px; width: 15px}
+  }
+  .textVideo {
+    color: #007d64;
+    text-align: center;
+    margin-top: 120px;
+    font-weight: bold;
+    font-size: 18px;
+  }

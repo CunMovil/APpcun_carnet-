@@ -1,0 +1,32 @@
+<ion-header >
+  <ion-navbar  >
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goHome()">
+        <ion-avatar >
+          <img src="assets/img/icono-cun-verde.png" width="30px" height="30px;" style="margin-right: 10px; padding: 5px" >
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title end>Directorio</ion-title>   
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div id="dtaDirec" *ngFor="let item of directorio; let i = index">
+    <span > {{i+1}}. </span> <p> {{item.nombre}}</p>
+    <p>{{item.telefono}}</p>
+    <p>{{item.email}}</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="assets/img/llamar.png" alt=""  (tap)="callPhone(item.telefono)"/>
+          <p class="icontext"> Llamar </p>
+        </ion-col>
+        <ion-col >      
+          <img src="assets/img/correo.png" alt="" (click)="sendEmail(item.email)" />
+          <p class="icontext">Enviar Correo </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+    <hr style="height:5px ;">
+  </div>
+</ion-content>
