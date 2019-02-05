@@ -151,7 +151,7 @@ export class CarnePage {
       self.generated = url;
     })
   }
-  
+  ///commit1
   
 
   goHome(){
