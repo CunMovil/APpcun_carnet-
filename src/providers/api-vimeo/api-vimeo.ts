@@ -22,9 +22,10 @@ export class ApiVimeoProvider {
   
     this.headersParams =
     {
-         "Content-Type": "application/json",
-         "Accept": "application/vnd.vimeo.*+json;version=3.4",
-         "Authorization": "Bearer 08093dbf7ad01a80be3218b4201ad054"
+      "Authorization": "Bearer 08093dbf7ad01a80be3218b4201ad054",      
+      "Content-Type": "application/json",
+      "Accept": "application/vnd.vimeo.*+json;version=3.4",
+         
     };
     this.TusheadersParams =
     {
@@ -47,12 +48,12 @@ export class ApiVimeoProvider {
   }
 
   POST_tus(videoInfo) {
+  
     this.options= {
       headers: this.headersParams,    
       body: JSON.stringify({
         upload: {
           approach:"tus",
-          redirect_url:"http://localhost:8100",
           size: videoInfo.size
         },
         name : videoInfo.nombre,

@@ -23,7 +23,10 @@ export const infoPost = 'InfoPostPage';
 export const calendario = 'CalendarioPage';
 
 //modal pages.
+export const CamiExp = 'CamiExpPage';
 export const horarioModal = 'HorariomodalPage';
 export const comentariosModal = 'ModalCommentsPage';
 export const notificacionesModal = 'NotificacionmodalPage';
+export const poliza = 'PolizaPage';
+
 

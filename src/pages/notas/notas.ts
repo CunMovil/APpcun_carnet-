@@ -201,5 +201,8 @@ export class NotasPage {
   goHome() {
     this.navCtrl.setRoot('MenuCunPage')
   }
+
+
+
 }
 

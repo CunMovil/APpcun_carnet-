@@ -1,8 +1,12 @@
 import { CunapiProvider } from './../../providers/cunapi/cunapi';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, AlertController, PopoverController, LoadingController } from 'ionic-angular';
 import QRCode from 'qrcode';
+import { Slides } from 'ionic-angular';
+import { poliza } from '../index';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { LottieAnimationViewModule } from 'lottie-angular2';   
 
 @IonicPage()
 @Component({
@@ -11,89 +15,131 @@ import QRCode from 'qrcode';
 })
 export class CarnePage {
   
+  alertCtrl: any;
+  @ViewChild(Slides) slides: Slides;
+  stateAnim:boolean = false;
   imgUrl:string;
-  generated = '';
-  qrdata =[
+  generated = ''; 
+
+  qrdata =
     {
-      primerNombre:'',
-      segundoNombre:'',
-      primerApellido:'',
-      segundoApellido:'',
-      cc:  "",
-      carrera:"",
-      sede: "",
-      rh: ""
-    }];
+      nombres:'',
+      apellidos:'',
+      numeroDocumento:  "",
+      programa:"",
+      mensaje:"",
+      estado:'',
+      correo:''
+    };
+
+    public lottieConfig: Object;
+    private anim: any;
+    private animationSpeed: number = 0;
   
   displayQrCode() {
     return this.generated !== '';
   }
 
-  constructor (  public navCtrl: NavController,
+  constructor ( public navCtrl: NavController,
                 public navParams: NavParams,
                 private nativeStorage: NativeStorage,
                 private cunMovilAPI : CunapiProvider,
-                private toastCtrl : ToastController) {              
-    
+                private toastCtrl : ToastController,
+                public  alerC: AlertController,
+                public loadingCtrl :LoadingController,
+                public popoverCtrl: PopoverController
+                
+              ) {        
+ 
+                this.lottieConfig = {
+                  path: 'assets/img/swipe-left.json',
+                  autoplay: true,
+                  loop: true
+              };
   }
 
-  ionViewWillEnter() {
-    this.nativeStorage.getItem('user').then(userRes=> this.imgUrl = userRes.picture )    
-    this.nativeStorage.getItem('student').then(studentData => {
-      this.nativeStorage.getItem('carne').then(carneSaved=> {          
-        this.QRgenerator(carneSaved)      
-      },err =>{
-        this.cunMovilAPI.getUserlicence(studentData.ccid).subscribe(studenRes=> {
-          if(studenRes[0].IDENTIFICACION) {
-            var carneObj = {
-              NOM_TERCERO:studenRes[0].NOM_TERCERO,
-              SEG_NOMBRE:studenRes[0].SEG_NOMBRE,
-              PRI_APELLIDO:studenRes[0].PRI_APELLIDO,
-              SEG_APELLIDO: studenRes[0].SEG_APELLIDO,
-              IDENTIFICACION:studenRes[0].IDENTIFICACION,
-              NOM_UNIDAD:studenRes[0].NOM_UNIDAD,
-              NOM_SEDE:studenRes[0].NOM_SEDE,
-              FRH_SANGUINEO: studenRes[0].FRH_SANGUINEO
-            }    
-            this.nativeStorage.setItem('carne',carneObj)    
-            this.QRgenerator(studenRes[0])             
-          }else{
-            let toast = this.toastCtrl.create({
-              message: 'No Tienes acceso a carnet ',
-              duration: 3000,
-              position: 'middle'
-            });
-            toast.present();
-            toast.onDidDismiss(()=>{
-              this.navCtrl.setRoot('MenuCunPage');
-            })      
-          }
-        },err => {
-          let toast = this.toastCtrl.create({
-            // message: 'No Tienes acceso a carnet ('+err+ ')',
-            message: 'No Tienes acceso a carnet',
-            duration: 3000,
-            position: 'middle'
-          });
-          toast.present();
-          toast.onDidDismiss(()=>{
-            this.navCtrl.setRoot('MenuCunPage');
-          })
-        })
-      })      
-    })  
+  handleAnimation(anim: any) {
+    this.anim = anim;
+    console.log(anim);
+    this.anim.stop();
   }
+
+ 
+
+  stop() {
+    this.anim.stop();
+  }
+
+  setSpeed(speed: number) {
+    this.animationSpeed = speed;
+    this.anim.setSpeed(speed);
+}
+
+  ionViewDidEnter(){
+
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ` <div class="loader">Espera...</div> `
+    });
+    loading.present();
+
+    this.nativeStorage.getItem('user').then(userRes =>{
+      this.imgUrl = userRes.picture;   
+
+      this.cunMovilAPI.getUserlicence(userRes.email).subscribe(res=>{      
+                   
+        loading.dismiss();
+
+        if(res['mensaje']){
+          this.slides.lockSwipes(true);
+          this.slides.freeMode = false;
+          this.toastCtrl.create({
+            message:res['mensaje'],
+            position:'bottom',
+            duration:3000
+          }).present();
+          
+        }else{
+
+          this.qrdata.nombres = res['nombres'];
+          this.qrdata.apellidos = res['apellidos'];
+          this.qrdata.numeroDocumento = res['numeroDocumento'];
+          this.qrdata.programa = res['programa'];
+          this.qrdata.estado = res['texto1'];
+          this.qrdata.correo = res['texto2']
+
+          this.QRgenerator(this.qrdata)
+        }
+      },err =>{
+        loading.dismiss()
+        this.slides.lockSwipes(true);
+        this.slides.freeMode = false;
+        this.toastCtrl.create({
+          message:'Conéctate a una red para obtener tus datos.',
+          position:'bottom',
+          duration:3000
+        }).present();
+      })
+
+    }, err =>{
+      loading.dismiss();
+      this.toastCtrl.create({
+        message:'Intenta mas tarde',
+        position:'bottom',
+        duration:3000
+      }).present()
+    })
+  
+  }
+
 
   QRgenerator(studenRes) {
-    this.qrdata[0].primerNombre = studenRes.NOM_TERCERO;
-    this.qrdata[0].segundoNombre = studenRes.SEG_NOMBRE;
-    this.qrdata[0].primerApellido = studenRes.PRI_APELLIDO;
-    this.qrdata[0].segundoApellido = studenRes.SEG_APELLIDO;
-    this.qrdata[0].cc = studenRes.IDENTIFICACION;
-    this.qrdata[0].carrera = studenRes.NOM_UNIDAD;
-    this.qrdata[0].sede = studenRes.NOM_SEDE;
-    this.qrdata[0].rh = studenRes.FRH_SANGUINEO;
-    this.process();
+    const qrcode = QRCode;
+    const self = this;
+    let res ="Nombres: "+ studenRes.nombres + " Apellidos :"+ studenRes.apellidos + ", Identificacion: "+studenRes.numeroDocumento + " ,\n Programa: "+studenRes.programa + ",\n Estado: "+studenRes.estado  + ",\n Correo: "+studenRes.correo;
+    qrcode.toDataURL(res.toString(), { errorCorrectionLevel: 'H' }, function (err, url) {
+      self.generated = url;
+    })
   }
 
   process() {
@@ -105,7 +151,31 @@ export class CarnePage {
       self.generated = url;
     })
   }
+  
+  
+
   goHome(){
     this.navCtrl.setRoot('MenuCunPage')
+  };
+
+  dataReturn(){
+    let email = ""
+    this.cunMovilAPI.getUserlicence(email).subscribe(res=>{
+      console.log(res)
+
+    })
+  }
+
+
+  fnTest(){
+   if (this.stateAnim == false) {
+     this.stateAnim = true
+     this.stop();
+   } else {
+    this.stateAnim = false;
+    this.anim();
+   }
   }
 }
+
+

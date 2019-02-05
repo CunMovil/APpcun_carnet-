@@ -10,27 +10,52 @@
     <ion-title end>{{ 'PAGE_CARNE_TITLE' | translate }}</ion-title>   
   </ion-navbar>
 </ion-header>
-<ion-content class="card-background-page">
-  <ion-card class="carnetCard" *ngFor="let qrData of qrdata;">
-    <img src="assets/img/carnetblanco.png"/>
-    <ion-item text-wrap  color="secondary"  >
-      <ion-thumbnail item-right>
-        <img src="{{imgUrl}}">
-        <p>{{ 'PAGE_CARNE_CUN' | translate }}</p>
-      </ion-thumbnail>        
-      <p class="datosC"> {{qrData.primerNombre}} {{qrData.segundoNombre}} {{qrData.primerApellido}} {{qrData.segundoApellido}}</p>
-      <p class="datosC">Cc: {{qrData.cc}}</p>
-      <p class="datosC"> {{qrData.carrera}}</p>
-      <p class="datosC">Sede: {{qrData.sede}}</p>
-      <p class="datosC">RH: {{qrData.rh}}</p>        
-    </ion-item>      
-  </ion-card>
-  <div class="codigo" *ngIf="displayQrCode()">
-    <img *ngIf="displayQrCode()" [src]="generated" />
-  </div> 
+
+<ion-content padding>
+  <ion-slides effect="flip" (ionSlideDrag)="fnTest()">
+    <ion-slide (change)="setSpeed(1)" >
+      <ion-card class="carnetCard" >
+        <img src="assets/img/carnetblanco.png"/>
+        <ion-item text-wrap  color="secondary"  >
+          <ion-thumbnail item-right>
+            <img src="{{imgUrl}}">
+            <p >{{ 'PAGE_CARNE_CUN' | translate }}</p>
+          </ion-thumbnail>        
+          <p> <b>Nombre:</b></p> 
+          <p class="datosC">{{qrdata.nombres}} {{qrdata.apellidos}} </p>
+          <p> <b> Cc:</b> </p>
+           <p class="datosC"> {{qrdata.numeroDocumento}}</p>
+          <p><b> Programa:</b></p>
+          <p class="datosC"> {{qrdata.programa}}</p>          
+        </ion-item>      
+      </ion-card>
+      <div class="codigo" *ngIf="displayQrCode()">
+        <img *ngIf="displayQrCode()" [src]="generated" />
+      </div>
+    </ion-slide>
+    <ion-slide (change)="setSpeed(1)">
+      <ion-card class="carnetCard">
+        <img src="assets/img/carnetblanco.png"/>
+        <ion-item text-wrap  color="secondary">        
+          <div class="footerCarne">
+            <p class="textFooter">{{ 'PAGE_CARNE_fOOTER_TEXT' | translate }}</p>
+            <p class="textFooter">{{ 'PAGE_CARNE_fOOTER_TEXT2' | translate }}</p>
+          </div>
+        </ion-item>  
+      </ion-card>
+      <div>
+        <img src="assets/img/poliza.png" class="poliza" alt="">
+      </div>      
+      <!-- <ion-icon name="help" class="help" (tap)="presentPopover(1)"></ion-icon>    
+      <img src="assets/img/poliza.png" id="imPoliza" (tap)="presentPopover(2)"  alt=""> -->
+    </ion-slide>
+  </ion-slides>
+  <lottie-animation-view
+  [options]="lottieConfig"
+  [width]="120"
+  [height]="120"
+  [hidden]='stateAnim'
+  (animCreated)="handleAnimation($event)">
+</lottie-animation-view>
+
 </ion-content>
-<ion-footer>
-  <div class="footerCarne">
-    <p class="textFooter">{{ 'PAGE_CARNE_fOOTER_TEXT' | translate }}</p>
-  </div>
-</ion-footer>

@@ -2,7 +2,7 @@ import { CunapiProvider } from './../../providers';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, MenuController, ToastController, ViewController, Alert } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, MenuController, ToastController, ViewController, Alert, AlertController, LoadingController } from 'ionic-angular';
 import { Device } from '@ionic-native/device';
 import { Item } from '../../models/item';
 import { BotonesMenu } from '../../providers';
@@ -23,15 +23,16 @@ import { OneSignal } from '@ionic-native/onesignal';
  
 })
 export class MenuCunPage {
+ 
   currentButtons: Item[];
   givenName: string ;
   email: string;
   imageUrl:string; 
   Notificaciones;
   public contador:boolean = true;
-  
 
-  constructor (
+
+    constructor (
                 public  navCtrl: NavController,
                 public  navParams: NavParams,
                 public  buttons:BotonesMenu,
@@ -48,8 +49,12 @@ export class MenuCunPage {
                 private toastCtrl: ToastController,
                 public oneSignal :OneSignal,
                 public notificationProvider:PushnotificationProvider,
-                public viewCtrl: ViewController           
-            ) {         
+                public viewCtrl: ViewController,
+                public loadingCtrl :LoadingController
+                     
+            ) { 
+              
+             
   }
 
   ionViewWillEnter() {   
@@ -66,7 +71,7 @@ export class MenuCunPage {
     },function(err) {  
       let toast = env.toastCtrl.create({
         message: 'Error al cargar Informacion de usuario',
-        duration: 3000,
+        duration: 2000,
         position: 'bottom'
       });
       toast.present();     
@@ -111,12 +116,7 @@ export class MenuCunPage {
       env.cunMovilAPI.getUserByEmail(email).subscribe(userRes => {
         env.nativeStorage.setItem('student',{ccid:userRes[0].NUM_IDENTIFICACION})
       },err => {
-        let toast = env.toastCtrl.create({
-          message: 'No hay conexión al Servidor, intenta mas tarde ',
-          duration: 3000,
-          position: 'bottom'
-        });
-        toast.present();
+        
       })
     })    
   };     
@@ -144,8 +144,8 @@ export class MenuCunPage {
   openPage(page) {
     if (page == 'CunVirtualPage') {
       this.openCunVirtual();
-    } else if (page == 'ZohoPage') {
-      this.openZohoEs();
+    } else if (page == 'NotasPage') {
+       this.opennotas();
     } else if (page =='EmpleoPage') {
       this.openEmpleo();
     } else {
@@ -157,8 +157,8 @@ export class MenuCunPage {
     this.inAppBrowser.create("http://www.elempleo.com/sitios-empresariales/Colombia/cun/","_blank",)
   }
 
-  openZohoEs() {
-    this.inAppBrowser.create("https://desk.zoho.com/portal/cunportal","_blank",)
+  opennotas() {
+     this.inAppBrowser.create("http://sigwt.cun.edu.co:8080/sinugwt/","_blank",)
   }
 
   openCunVirtual() {
@@ -213,20 +213,39 @@ export class MenuCunPage {
     })
   };
 
+  cuentas(){
+    this.inAppBrowser.create("https://goo.gl/forms/L6ANNaG4I9e5PrL52","_blank",)
+  }
   logOut(){
     this.afAuth.auth.signOut();
     this.navCtrl.setRoot("LoginPage");
     if (this.platform.is('cordova')) {
       this.googlePlus.logout()
+      this.nativeStorage.remove('user');
+      this.nativeStorage.clear();
     } else {}
   }
 
-  signOut() {      
+  signOut() { 
+    
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ` <div class="loader">Espera Cerrando Sesión</div> `,
+      duration: 4000
+    });
+    loading.present();
+
     this.nativeStorage.clear().then(()=>{
       this.afAuth.auth.signOut();     
-      this.googlePlus.logout()  
-      this.navCtrl.popToRoot();
+      this.googlePlus.logout() 
+      this.nativeStorage.remove('user');
+      this.nativeStorage.clear()
+      this.navCtrl.popToRoot();  
       this.navCtrl.setRoot('WelcomePage');
+      loading.dismiss();     
     }) 
+
+     
   }
+
 }

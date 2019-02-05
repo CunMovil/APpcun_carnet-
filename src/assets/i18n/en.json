@@ -87,6 +87,14 @@
   "PAGE_BIBLIOTECA_TITLE":"Library",
   "PAGE_BIBLIOTECA_BUTTON_V":"Virtual Library",
   "PAGE_BIBLIOTECA_BUTTON_C":"Library Catalog",
+  
+  "CAMI_TITLE":"Cami",
+  "CAMI_BUTTON_1":"Writes",
+  "CAMI_BUTTON_2":"Ticket",
+  "CAMI_BUTTON_3":"Experience",
+  "CAMI_BUTTON_4":"Speaks",
+  "CAMI_BUTTON_5":"Mobile",
+  "CAMI_BUTTON_6":"Listen out",
 
   "PAGE_PAGO_TITLE":"My Payments",
   "PAGE_PAGO_BUTTONPEC":"Pay",

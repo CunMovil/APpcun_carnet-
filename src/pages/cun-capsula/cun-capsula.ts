@@ -40,7 +40,6 @@ export class CunCapsulaPage {
     this.getVideos()  
   }
 
-
   
   getVideos() {
     let loader = this.loading.create(

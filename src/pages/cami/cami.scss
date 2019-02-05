@@ -1,0 +1,38 @@
+page-cami {
+    .toolbar-title {
+        margin-top: 5px !important;
+        text-align: left !important ;
+        font-size: 2em !important;
+        font-weight: bolder !important;
+        color: color($colors, secondary)!important;
+        text-shadow: 4px 4px 5px rgba(3, 35, 39,0.7);
+     }
+     .buttoncami {
+        background-color:color($colors, secondary);
+        width: 100%;
+        height: 120px !important;
+        border-radius: 8px;
+        margin: 12px 10px 19px 80px ;
+        box-shadow: 0 8px 2px 0 rgba(0, 0, 0, 0.3) ,
+                0 3px 1px -2px rgba(0, 0, 0, 0.3) ,
+                0 1px 5px 0 rgba(0, 0, 0, 0.3) !important;
+        text-align: center;
+    }    
+    p {
+     color: white;      
+    }
+
+    .imgcami {
+        height:40%;
+        width: 40%;
+    }
+    
+    .iconB {
+        font-size: 5.0em !important;
+        color:color($colors, light) !important;
+    }
+    .iframeBiblioteca {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

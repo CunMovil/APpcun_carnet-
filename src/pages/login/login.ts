@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, LoadingController,Nav, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, LoadingController, Nav, AlertController, Alert } from 'ionic-angular';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { NativeStorage } from '@ionic-native/native-storage';
 
@@ -69,6 +69,8 @@ export class LoginPage {
     if (this.platform.is('cordova')) {
       this.googlePlus.logout()
       this.nativeStorage.remove('user');
+      this.nativeStorage.clear();
+      this.navCtrl.setRoot(LoginPage);
       this.navCtrl.push(LoginPage);
     } else {}
   }
@@ -82,10 +84,11 @@ export class LoginPage {
     });
     loading.present();
     this.googlePlus.login({ 
-      'webClientId':"537588800472-09dt0r3bviscgeep9c4eqla4v6h78mcb.apps.googleusercontent.com",
+      'webClientId':"41595466370-m1rp1tndq8ub6d74ugh7ma4jjuuga3m6.apps.googleusercontent.com",
       'offline':true,
       'scopes':'profile email '
-    }).then(res=> {          
+    }).then(res=> {   
+     // alert(res);       
       this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
       this.displayName = res.displayName;
       this.email = res.email;
@@ -110,7 +113,7 @@ export class LoginPage {
         loading.dismiss();
         env.navCtrl.setRoot(MenuCun)
         let toast = env.toastCtrl.create({
-          message: 'Bienvenido ' +res.givenName,
+          message: 'Bienvenid@ ' +res.givenName,
           duration: 3000,
           position: 'top'
         });
@@ -120,6 +123,7 @@ export class LoginPage {
         let toast = this.toastCtrl.create({
           message:'! Error de Registro de usuario ¡ \n ',            
           position:'bottom',
+          duration: 2000,
           showCloseButton:true
         });
         toast.onDidDismiss(()=>{
@@ -131,8 +135,9 @@ export class LoginPage {
       loading.dismiss();
       console.log(err)
       let toast = this.toastCtrl.create({
-        message:'! Error de inicio de sesion ¡ \n ',      
+        message:'! Error de inicio de sesion ¡ \n',      
         position:'bottom',
+        duration: 2000,
         showCloseButton:true
       });
       toast.onDidDismiss(()=> {

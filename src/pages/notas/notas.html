@@ -12,7 +12,7 @@
  </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row >
       <ion-col >
         <table id="tablaNotas">
@@ -24,7 +24,8 @@
             <th>C3</th>
             <th>DEF</th>                  
           </thead>                  
-          <tbody id="tablaBody"> <!-- Cuerpo de la tabla -->
+          <tbody id="tablaBody">
+             
             <tr  [ngClass]="{'fondoTr': selectedItem == nota}" (click)="seleccionarNota(nota,i)" *ngFor="let nota of Notas; let i = index" >
               <td><p>{{i+1}}.</p></td>
               <td><span class="asignaturas">{{nota.nombreAsignatura}}</span></td>
@@ -59,12 +60,12 @@
         </table>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 </ion-content>
-<ion-footer>
+<!-- <ion-footer>
   <ion-navbar color="primary">
     <div id="footerMateria">        
         <p #mensaje class="mensajeCorte" [hidden]="ocultar"></p>
     </div>
   </ion-navbar>   
-</ion-footer>
+</ion-footer> -->

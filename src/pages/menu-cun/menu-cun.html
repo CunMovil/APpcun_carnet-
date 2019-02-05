@@ -6,17 +6,23 @@
         <h2 align='center'>{{givenName}}</h2>
         <h6 align='center'>{{email}}</h6>
       </div>
-      <button ion-button block  (click)="sedesPush({component:'UbicacionPage'})" menuToggle  >
+      <!-- <button ion-button block  (click)="sedesPush({component:'UbicacionPage'})" menuToggle  >
         <ion-icon name="locate" class="buttonProfile" ></ion-icon>
         Sedes Cun
-      </button> 
+      </button>  -->
       <button ion-item (click)="signOut()" menuToggle> 
+          <button ion-button block >
+              <ion-icon name="log-out" class="buttonProfile" ></ion-icon>
+              Cerrar Sesion         
+          </button> 
+      </button>
+      <button ion-item (click)="cuentas()" menuToggle> 
         <button ion-button block >
-            <ion-icon name="log-out" class="buttonProfile" ></ion-icon>
-            Cerrar Sesion         
+          <ion-icon name="star" class="buttonProfile" ></ion-icon>
+            Tu cuentas       
         </button> 
       </button>
-      <ion-item>         
+      <ion-item> 
         <button ion-button menuClose detail-none outline item-end >Cerrar Menu</button>
       </ion-item>
     </ion-list>  
@@ -29,7 +35,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid >
+  <ion-grid padding>
     <ion-row>
       <ion-col   col-4 [ngClass]="{'padding':i >2}" *ngFor="let button of currentButtons; let i = index" (click)="openPage(button.page)">        
         <div ion-button block [ngClass]="{'verdeClaro':i%2 == 0, 'verdeOscuro': i%2 !== 0 }"  >
@@ -47,22 +53,23 @@
     <div class="iconFooter">
       <ion-grid class="footerGrid">
         <ion-row>
-          <ion-col col-2>
+          <ion-col col-4>
             <img class="iconFooter" src="assets/img/19noticias.png" (click)="noticiasPush()"/>
           </ion-col>
-          <ion-col col-2>
+          <!-- <ion-col col-2>
             <img class="iconFooter" src="assets/img/20sedes.png" (click)="sedesPush()"/>
           </ion-col>
           <ion-col col-4>
             <img class="iconU" src="assets/img/21cun.png" />
-          </ion-col>
-          <ion-col col-2 >       
+          </ion-col> -->
+          <ion-col col-4>
+              <ion-badge class="badge" [hidden]= "contador" >{{Notificaciones}}</ion-badge>
+           <img class="iconNoti" src="assets/img/23notificaciones.png" (click)="notificaciones()"/> 
+           </ion-col>
+          <ion-col col-4 >       
             <img class="iconFooter" src="assets/img/22directorio.png" (click)="directorioPush()" />
           </ion-col>
-          <ion-col col-2>
-             <ion-badge class="badge" [hidden]= "contador" >{{Notificaciones}}</ion-badge>
-          <img class="iconFooter" src="assets/img/23notificaciones.png" (click)="notificaciones()"/> 
-          </ion-col>
+          
         </ion-row>
       </ion-grid>     
     </div> 

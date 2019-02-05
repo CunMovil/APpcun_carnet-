@@ -11,7 +11,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-a
 import { Settings, User, Api, BotonesMenu, HorarioProvider,ApiVimeoProvider,DirectorioProvider } from '../providers';
 import { MyApp } from './app.component';
 import { StreamingMedia } from '@ionic-native/streaming-media';
-import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { ScreenOrientation} from '@ionic-native/screen-orientation';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Device } from '@ionic-native/device';
 import { AppAvailability } from '@ionic-native/app-availability';
@@ -38,13 +38,15 @@ import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { FileOpener } from '@ionic-native/file-opener';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { LottieAnimationViewModule } from 'lottie-angular2'; 
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyCOO7fC785WA_Z6lRzDynjrsSVHhF7AhyY",
-  authDomain: "appcunhome.firebaseapp.com",
-  databaseURL: "https://appcunhome.firebaseio.com",
-  projectId: "appcunhome",
-  storageBucket: "appcunhome.appspot.com",
-  messagingSenderId: "537588800472"
+  apiKey: "AIzaSyAo4wFgKk2EATwvA9TfxSIiePaBVX6UR6g",
+  authDomain: "appcunmovil-d2596.firebaseapp.com",
+  databaseURL: "https://appcunmovil-d2596.firebaseio.com",
+  projectId: "appcunmovil-d2596",
+  storageBucket: "appcunmovil-d2596.appspot.com",
+  messagingSenderId: "41595466370"
 }
 
 // The translate loader needs to know where to load i18n files
@@ -76,7 +78,7 @@ export function provideSettings(storage: Storage) {
     BrowserModule,
     CalendarModule,
     HttpClientModule,
-    
+    LottieAnimationViewModule,
     AgmCoreModule.forRoot({apiKey:'AIzaSyA2Mr5jjkk_bsSNaL15TD4qurs7gwoaOHw'}),
     AngularFireModule.initializeApp(firebaseConfig), 
     AngularFireAuthModule,

@@ -72,7 +72,8 @@
 
   "PAGE_CARNE_TITLE":"Carné",
   "PAGE_CARNE_CUN":"#YOSOYCUN",
-  "PAGE_CARNE_fOOTER_TEXT":"Este carné es unico e intransferible, identifica al portador y supone la conformidad del titular con las condiciones establecidas por la institución.",
+  "PAGE_CARNE_fOOTER_TEXT":"Este carné es unico e intransferible, identifica al estudiante y supone la conformidad del titular con las condiciones establecidas por la Corporación Unificada Nacional de Educación Superior - CUN.",
+  "PAGE_CARNE_fOOTER_TEXT2":"Al retirarse de la institución, el estudiante deberá entregar el documento en Bienestar Institucional.",
 
 
   "PAGE_CUNMEDIA_TITLE":"Cun Radio",
@@ -82,6 +83,14 @@
   "PAGE_BIBLIOTECA_TITLE":"Biblioteca",
   "PAGE_BIBLIOTECA_BUTTON_V":"Biblioteca Virtual",
   "PAGE_BIBLIOTECA_BUTTON_C":"Biblioteca Catálogo",
+
+ "CAMI_TITLE":"Cami",
+  "CAMI_BUTTON_1":"Escribe",
+  "CAMI_BUTTON_2":"Ticket",
+  "CAMI_BUTTON_3":"Experiencia",
+  "CAMI_BUTTON_4":"Habla",
+  "CAMI_BUTTON_5":"Móvil",
+  "CAMI_BUTTON_6":"Escucha", 
 
   "PAGE_PAGO_TITLE":"Mis Pagos",
   "PAGE_PAGO_BUTTONPEC":"Pagar",

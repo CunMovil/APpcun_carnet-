@@ -11,6 +11,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { timer } from 'rxjs/observable/timer';
 import { PushnotificationProvider } from '../providers/pushnotification/pushnotification';
 
+
 @Component({
   template:  
   `

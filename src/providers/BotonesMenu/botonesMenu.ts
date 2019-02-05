@@ -40,23 +40,23 @@ export class BotonesMenu {
                         page:    "NotasPage", 
                         cunOnly: true
                       },
-                      {
-                        nombre: values.TITLE_MENU_HORARIO,
-                        imagen: "assets/img/8horario.png",
-                        page:   "HorarioPage", 
-                        cunOnly: true
-                      },
+                      // {
+                      //   nombre: values.TITLE_MENU_HORARIO,
+                      //   imagen: "assets/img/8horario.png",
+                      //   page:   "HorarioPage", 
+                      //   cunOnly: true
+                      // },
                       {
                         nombre: values.TITLE_MENU_PAGO,
                         imagen: "assets/img/18pagos.png",
                         page:   "MispagosPage",
                         cunOnly: true
                       },
-                      {
-                        nombre: values.TITLE_MENU_CALENDARIO,
-                        imagen: "assets/img/6calendario.png",
-                        page:   "CalendarioPage"
-                      },
+                      // {
+                      //   nombre: values.TITLE_MENU_CALENDARIO,
+                      //   imagen: "assets/img/6calendario.png",
+                      //   page:   "CalendarioPage"
+                      // },
                       {
                         nombre: values.TITLE_MENU_BIBLIOTECA,
                         imagen: "assets/img/11biblioteca.png",
@@ -82,9 +82,9 @@ export class BotonesMenu {
                         page:   "EmpleoPage"
                       }
                       ,{
-                        nombre: "Zoho",
-                        imagen: "assets/img/support.png",
-                        page:   "ZohoPage"
+                        nombre: "¡Tu amig@ 24/7!",
+                        imagen: "assets/img/icon-cami.png",
+                        page:   "CamiPage"
                       }
         ];                
         for (let item of items) {
@@ -101,8 +101,8 @@ export class BotonesMenu {
     }
      this.items.filter((item) => {       
       if(item.cunOnly){
-        item.candado =  "assets/img/IconoCandado.png";
-        item.page = 'noCunPage';
+       // item.candado =  "assets/img/IconoCandado.png";
+        //item.page = 'noCunPage';
         filterItems.push(item)
       } else {
         filterItems.push(item)
