@@ -36,6 +36,9 @@ export class LoginPage {
   ageMin:any; 
   ageMax:any;
 
+  prueba:any;
+  pruebaicon:any
+
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
@@ -57,6 +60,8 @@ export class LoginPage {
               ){
                 
     this.user = this.afAuth.authState;
+    this.prueba = true;
+    this.pruebaicon = false;
     this.login();
   }
 
@@ -65,6 +70,7 @@ export class LoginPage {
   }
 
   signOut(){
+    this.pruebaicon = false;
     this.afAuth.auth.signOut();
     if (this.platform.is('cordova')) {
       this.googlePlus.logout()
@@ -76,6 +82,7 @@ export class LoginPage {
   }
 
   login() {
+    this.pruebaicon = false;
     let nav = this.navCtrl;
     let env = this;
     let loading = this.loadingCtrl.create({
@@ -84,7 +91,7 @@ export class LoginPage {
     });
     loading.present();
     this.googlePlus.login({ 
-      'webClientId':"41595466370-m1rp1tndq8ub6d74ugh7ma4jjuuga3m6.apps.googleusercontent.com",
+      'webClientId':"846916511719-mtlqe2kt40jgup5muah3opf3arfp3o11.apps.googleusercontent.com",
       'offline':true,
       'scopes':'profile email '
     }).then(res=> {   
@@ -120,6 +127,8 @@ export class LoginPage {
         toast.present();
       },function(err) {
         loading.dismiss();
+        env.pruebaicon = true;
+        env.prueba = false;
         let toast = this.toastCtrl.create({
           message:'! Error de Registro de usuario ¡ \n ',            
           position:'bottom',
@@ -133,9 +142,11 @@ export class LoginPage {
       })
     }).catch(err => {
       loading.dismiss();
+      env.pruebaicon = true;
+      env.prueba = false;
       console.log(err)
       let toast = this.toastCtrl.create({
-        message:'! Error de inicio de sesion ¡ \n',      
+        message:'!Error de inicio de sesion¡',      
         position:'bottom',
         duration: 2000,
         showCloseButton:true

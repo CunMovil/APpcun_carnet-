@@ -56,6 +56,6 @@ export class AgendaPage {
     }
    
   goHome() {
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 }

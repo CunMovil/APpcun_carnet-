@@ -1,9 +1,8 @@
 {
-  "name": "AppCun_v_2",
+  "name": "cunmovil",
   "integrations": {
     "cordova": {}
   },
   "type": "ionic-angular",
-  "pro_id": "c5f8fb5f",
   "app_id": ""
 }

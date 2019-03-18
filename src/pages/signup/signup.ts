@@ -36,9 +36,9 @@ export class SignupPage {
   doSignup() {
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
-      this.navCtrl.push('MenuCunPage');
+      this.navCtrl.push('MenuslidesPage');
     }, (err) => {
-      this.navCtrl.push('MenuCunPage');
+      this.navCtrl.push('MenuslidesPage');
       // Unable to sign up
       let toast = this.toastCtrl.create({
         message: this.signupErrorString,

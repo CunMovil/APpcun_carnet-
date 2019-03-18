@@ -28,12 +28,12 @@ $colors: (
   primary:    #003138,
   secondary:  #007d64,
   third :     #00695c,
-  danger:     #f53d3d,
+  danger:     #fff,
   light:      #f4f4f4,
   ghost:      #dfdfe5,
   dark:       #222,
   whiteDark:  #258c68,
-  yellowIcon: #CD9B5A,
+  yellowIcon: #fff,
   greefond:   #144148
 );
 
@@ -114,7 +114,7 @@ $refresher-border-color:#258c68;
 $alert-md-border-radius:15px;
 $alert-md-background-color:rgba(0, 125, 100, 0.9);
 $alert-md-message-text-color:white;
-$alert-md-button-text-color: #CD9B5A;
+$alert-md-button-text-color: #fff;
 $alert-md-message-text-color:  #144148;
 
 $badge-md-border-radius:50%;

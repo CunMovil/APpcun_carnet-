@@ -1,59 +1,43 @@
 {
   "project_info": {
-    "project_number": "41595466370",
-    "firebase_url": "https://appcunmovil-d2596.firebaseio.com",
-    "project_id": "appcunmovil-d2596",
-    "storage_bucket": "appcunmovil-d2596.appspot.com"
+    "project_number": "846916511719",
+    "firebase_url": "https://corporacionunificadan-1af16.firebaseio.com",
+    "project_id": "corporacionunificadan-1af16",
+    "storage_bucket": "corporacionunificadan-1af16.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:41595466370:android:ed19de34b4eb8f81",
+        "mobilesdk_app_id": "1:846916511719:android:b23cd78097c64e72",
         "android_client_info": {
-          "package_name": "co.cebiac.appCun"
+          "package_name": "co.corporacionunificadan.cunmovil"
         }
       },
       "oauth_client": [
         {
-          "client_id": "41595466370-icej51en6mvdsglragadirkfjl8pho1r.apps.googleusercontent.com",
+          "client_id": "846916511719-qak7bkhrndug56t86l3r1go23ct2sgqd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "co.cebiac.appCun",
+            "package_name": "co.corporacionunificadan.cunmovil",
             "certificate_hash": "161006906737bddfa9ca417686d23a056cc180e4"
           }
         },
         {
-          "client_id": "41595466370-uf8p6feuqh6gluqak92vitjnu7mcqam2.apps.googleusercontent.com",
+          "client_id": "846916511719-it71hta9phjpadukcrs4ptsubpotc3qi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "co.cebiac.appCun",
-            "certificate_hash": "16231e43852a497e010ca9c0abf1adc57df81d9d"
+            "package_name": "co.corporacionunificadan.cunmovil",
+            "certificate_hash": "b10065f971b3556899571013abc7aba1ba7e53d5"
           }
         },
         {
-          "client_id": "41595466370-dqst3diilf71japcua9v2kh8cb0552bd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "co.cebiac.appCun",
-            "certificate_hash": "59bbbdc5add4f09e91479d53a2b2ecbd4e5c6f73"
-          }
-        },
-        {
-          "client_id": "41595466370-qrthtttjtputmav791ta23npjhmi8q6g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "co.cebiac.appCun",
-            "certificate_hash": "61aedd2767c64b9159b1303b36d04491ee3f1075"
-          }
-        },
-        {
-          "client_id": "41595466370-m1rp1tndq8ub6d74ugh7ma4jjuuga3m6.apps.googleusercontent.com",
+          "client_id": "846916511719-mtlqe2kt40jgup5muah3opf3arfp3o11.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4Q33HDSprARrHWrxyKoSRxvV0IrFPPEE"
+          "current_key": "AIzaSyD7sU8Wnf8Sk85fFrUvRryuX5_DPHkJ83M"
         }
       ],
       "services": {
@@ -64,8 +48,15 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "41595466370-m1rp1tndq8ub6d74ugh7ma4jjuuga3m6.apps.googleusercontent.com",
+              "client_id": "846916511719-mtlqe2kt40jgup5muah3opf3arfp3o11.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "846916511719-78asitkps3heq3pks6d3udbjulpc2vae.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.corporacionunificadan.cunmovil"
+              }
             }
           ]
         },

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
-import {CamiExp} from '../';
+import { Network } from '@ionic-native/network';
+
+
 
 /**
  * Generated class for the CamiPage page.
@@ -19,48 +20,42 @@ import {CamiExp} from '../';
 export class CamiPage {
 
 
-  public bibliotecaBotones: boolean = false;
-  public bibliotecaVirtual: boolean = false;
-  public bibliotecaCatalogo: boolean = false;
-  public BibliotecaTitulo:string = 'cami';
+  conection:any;
   
   constructor (
                 public navCtrl: NavController,
                 public navParams: NavParams,
-                private inAppBrowser:InAppBrowser,
-                private alertCtrl : AlertController,
-                public document: DocumentViewer,
-                public modalCtrl: ModalController
-              ) {
+                public InAppBrowser:InAppBrowser,
+                public toastCtrl: ToastController,
+                public Network: Network,
+  ){
+   this.accesoInternet();
+  }
+
+  accesoInternet() {
+    this.Network.onDisconnect().subscribe(() => {   
+      if (this.Network.type === 'none' || this.Network.type === 'unknown' ) {
+        alert('Conectate a una red wi-fi');  
+        this.conection = this.Network.type;
+      }
+      alert('network was disconnected :-(');   
+    }).unsubscribe();    
   }
 
   escribe() {
-    let doc = document.getElementById('frame');
-    doc.innerHTML = "<iframe class='iframeBiblioteca' src='https://console.dialogflow.com/api-client/demo/embedded/3d57dea3-a597-4399-8391-3b8a62bee354' frameBorder='0'></iframe>"
-    this.bibliotecaBotones= true;    
-  
+    if (this.conection === 'none' || this.conection === 'unknown') {
+      this.goHome();
+    }else{
+      this.InAppBrowser.create("https://console.dialogflow.com/api-client/demo/embedded/3d57dea3-a597-4399-8391-3b8a62bee354","_blank", 'location=no');
+    }
+    
   }
 
   ticket() {
-    // let doc = document.getElementById('frame');
-    // doc.innerHTML = "<iframe class='iframeBiblioteca' src='https://desk.zoho.com/portal/cunportal/home' frameBorder='0'></iframe>"
-    // this.bibliotecaBotones= true;  
-
-    this.inAppBrowser.create(" https://desk.zoho.com/portal/cunportal/home","_blank",)
-  }
-  
-  experiencia() {
-    const camimodal = this.modalCtrl.create(CamiExp);
-    camimodal.present();
-  }
-
-  closeIframe() {    
-    this.bibliotecaBotones= false;
-    this.BibliotecaTitulo = "cami";
+    this.InAppBrowser.create("https://desk.zoho.com/portal/cunportal/home","_blank",'location=no')
   }
 
   goHome() {
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
-
 }

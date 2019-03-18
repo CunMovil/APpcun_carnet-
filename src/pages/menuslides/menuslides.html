@@ -1,0 +1,47 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <div class="imgCun">
+            <img src="assets/img/1logo.png"/>
+        </div>
+    </ion-toolbar>
+  </ion-header>
+<ion-content >
+    <ion-slides effect='slide' paginationType="fractions" slidesPerView="1.5" spaceBetween="20" pager="true" loop="true"  centeredSlides="true">
+      <ion-slide  *ngFor="let button of buttons.items; let i = index" (click)="openPage(button.page)" >
+      <div> <img class="ImagenBoton" [src]="button.imagen" ></div>
+        <div class="nombreBoton"><p> {{ button.nombre }}</p></div>
+      </ion-slide>
+     <ion-slide (tap)="openMedia()"  *ngIf="network">
+        <div> <img class="ImagenBoton" src="assets/img/5-cun-media.png" ></div>
+        <div class="nombreBoton"><p>Cun Media</p></div>
+      </ion-slide>
+      </ion-slides> 
+</ion-content>
+<ion-footer>
+  <ion-fab left bottom>
+    <button ion-fab color="danger"><ion-icon name="list-box"></ion-icon></button>
+    <ion-fab-list side="top"  >    
+      <button ion-fab (click)="openCunVirtual()"><ion-icon name="laptop"></ion-icon></button>
+      <button ion-fab (click)="empleo()" [disabled]="!network"><ion-icon name="briefcase" ></ion-icon></button>
+      <button ion-fab (click)="openPage(buttons.itemsSer[0].page)" [disabled]="!network"> <img src="assets/img/icono-cami.png" alt="" ></button>
+      <button ion-fab (click)="openPage(buttons.itemsSer[1].page)" [disabled]="!network"><ion-icon name="bookmarks"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab center bottom>
+    <ion-badge class="badge" [hidden]= "contador" >{{Notificaciones}}</ion-badge>
+    <button ion-fab color="danger" (click)="notificaciones()"><ion-icon name="notifications"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="information-circle"></ion-icon></button>
+    <ion-fab-list side="top">
+        <button ion-fab (click)="signOut()"><ion-icon name="log-out"></ion-icon></button>
+        <button ion-fab (click)="openPage(buttons.itemsInf[0].page)"><ion-icon name="paper"></ion-icon></button>
+        <button ion-fab (click)="openPage(buttons.itemsInf[1].page)"><ion-icon name="call"></ion-icon></button>
+      <button ion-fab (click)="tuCuentas()" [disabled]="!network"><ion-icon name="checkmark-circle"></ion-icon></button>    
+    </ion-fab-list>
+  </ion-fab>
+</ion-footer>
+
+

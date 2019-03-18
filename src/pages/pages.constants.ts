@@ -1,2 +1,2 @@
 //Constants for getting type references
-export const MENU_CUN_PAGE = 'MenuCunPage';
+export const MENU_CUN_PAGE = 'MenuslidesPage';

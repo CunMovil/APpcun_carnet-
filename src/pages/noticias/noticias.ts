@@ -44,7 +44,7 @@ export class NoticiasPage {
         });
         toast.present();
         toast.onDidDismiss(()=> {
-          this.navCtrl.setRoot('MenuCunPage');
+          this.navCtrl.setRoot('MenuslidesPage');
         })
       })     
     })
@@ -75,6 +75,6 @@ export class NoticiasPage {
   }
 
   goHome() {
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 }

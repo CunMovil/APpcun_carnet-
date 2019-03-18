@@ -48,7 +48,7 @@ export class MyApp {
                     { title: 'Signup', component: 'SignupPage' },
                     { title: 'Menu', component: 'MenuPage' },
                     { title: 'Settings', component: 'SettingsPage' },
-                    { title: 'MenuCun', component: 'MenuCunPage' }
+                    { title: 'MenuCun', component: 'MenuslidesPage' }
   ];
   showSplash = true;
   constructor (
@@ -79,7 +79,7 @@ export class MyApp {
         env.givenName = data.givenName;   
         env.rootPage = MenuCun;
         env.splashScreen.hide();       
-        env.openPage('MenuCunPage');
+        env.openPage('MenuslidesPage');
         //env.PushNotification.initNotification();
         env.PushNotification.getNotifications();
         env.showSplash = false;
@@ -123,6 +123,8 @@ export class MyApp {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
   }
+
+  
 
   openPage(page) {
     // Reset the content nav to have just this page

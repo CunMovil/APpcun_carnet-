@@ -1,0 +1,58 @@
+page-menuslides {
+    
+    .swiper-slide {
+        background-color: #1F997C !important;       
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        height: 75%;       
+    }
+    .swiper-slide p{
+        font-size: 30px;
+    }
+    .swiper-pagination-bullets {        
+        bottom: 20% !important;        
+    }
+    .swiper-pagination-bullet-active {
+        background: #f4f4f4;
+    }
+    .fab-md-in-list {
+        color:color($colors, primary);
+    }
+    .ImagenBoton {
+        width: 50%;
+        height: auto;      
+    }
+    .fab-md-danger {
+        background-color: #fff;
+        color:color($colors, primary);
+    }
+    .fab ion-icon {
+        font-size: 3.0rem;
+    }
+    .imgCun{
+        margin: auto;
+        width: 25%;
+        padding: 10px;
+        height: auto;
+    }
+    .badge {
+        right: -18px;
+        position: absolute;
+        top: 0px;
+        font-size: 12px;
+        width: 20px;
+        height: 20px;
+        padding: 3px 3px;
+        text-align: center;
+        color: #fff;
+        background-color: #1F997C !important;
+        margin-top: -8px;
+    } 
+    
+
+    @media (max-width: 365px){
+        .swiper-slide {
+            margin-top: 28px !important;
+        }
+    }
+}

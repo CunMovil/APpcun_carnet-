@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-navbar color="primary" >
+  <ion-navbar>
     <ion-buttons end>
       <button icon-only ion-button (click)="goHome()" >
         <ion-avatar >
@@ -10,7 +10,6 @@
     <ion-title end>{{ 'PAGE_CARNE_TITLE' | translate }}</ion-title>   
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
   <ion-slides effect="flip" (ionSlideDrag)="fnTest()">
     <ion-slide (change)="setSpeed(1)" >
@@ -46,16 +45,13 @@
       <div>
         <img src="assets/img/poliza.png" class="poliza" alt="">
       </div>      
-      <!-- <ion-icon name="help" class="help" (tap)="presentPopover(1)"></ion-icon>    
-      <img src="assets/img/poliza.png" id="imPoliza" (tap)="presentPopover(2)"  alt=""> -->
     </ion-slide>
   </ion-slides>
   <lottie-animation-view
-  [options]="lottieConfig"
-  [width]="120"
-  [height]="120"
-  [hidden]='stateAnim'
-  (animCreated)="handleAnimation($event)">
-</lottie-animation-view>
-
+    [options]="lottieConfig"
+    [width]="120"
+    [height]="120"
+    [hidden]='stateAnim'
+    (animCreated)="handleAnimation($event)">
+  </lottie-animation-view>
 </ion-content>

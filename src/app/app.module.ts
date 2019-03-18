@@ -8,7 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
-import { Settings, User, Api, BotonesMenu, HorarioProvider,ApiVimeoProvider,DirectorioProvider } from '../providers';
+import { Settings, User, Api, BotonesMenu, ApiVimeoProvider,DirectorioProvider } from '../providers';
 import { MyApp } from './app.component';
 import { StreamingMedia } from '@ionic-native/streaming-media';
 import { ScreenOrientation} from '@ionic-native/screen-orientation';
@@ -19,34 +19,28 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { MediaCapture } from '@ionic-native/media-capture';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { CallNumber } from '@ionic-native/call-number';
-import {AgmCoreModule} from '@agm/core';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {GooglePlus} from '@ionic-native/google-plus';
 import { WordpressProvider } from '../providers/wordpress/wordpress';
-import { SedesProvider } from '../providers/sedes/sedes';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { CalendarioProvider } from '../providers/calendario/calendario';
-import { CalendarModule } from "ion2-calendar";
 import { CunapiProvider } from '../providers/cunapi/cunapi';
 import { HTTP } from '@ionic-native/http';
 import { OneSignal } from '@ionic-native/onesignal';
 import { PushnotificationProvider } from '../providers/pushnotification/pushnotification';
-import { DocumentViewer } from '@ionic-native/document-viewer';
-import { File } from '@ionic-native/file';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import { FileOpener } from '@ionic-native/file-opener';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { LottieAnimationViewModule } from 'lottie-angular2'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Network } from '@ionic-native/network';
+
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAo4wFgKk2EATwvA9TfxSIiePaBVX6UR6g",
-  authDomain: "appcunmovil-d2596.firebaseapp.com",
-  databaseURL: "https://appcunmovil-d2596.firebaseio.com",
-  projectId: "appcunmovil-d2596",
-  storageBucket: "appcunmovil-d2596.appspot.com",
-  messagingSenderId: "41595466370"
+  apiKey: "AIzaSyDD2hUmbvTPsxTiliHaewh2ZQPI_dC9uUY",
+  authDomain: "corporacionunificadan-1af16.firebaseapp.com",
+  databaseURL: "https://corporacionunificadan-1af16.firebaseio.com",
+  projectId: "corporacionunificadan-1af16",
+  storageBucket: "corporacionunificadan-1af16.appspot.com",
+  messagingSenderId: "846916511719"
 }
 
 // The translate loader needs to know where to load i18n files
@@ -76,10 +70,9 @@ export function provideSettings(storage: Storage) {
   ],
   imports: [
     BrowserModule,
-    CalendarModule,
     HttpClientModule,
     LottieAnimationViewModule,
-    AgmCoreModule.forRoot({apiKey:'AIzaSyA2Mr5jjkk_bsSNaL15TD4qurs7gwoaOHw'}),
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig), 
     AngularFireAuthModule,
     NgxQRCodeModule,
@@ -112,7 +105,6 @@ export function provideSettings(storage: Storage) {
     HTTP,
     BotonesMenu,
     ApiVimeoProvider,
-    HorarioProvider,
     User,
     Camera,
     SplashScreen,
@@ -121,21 +113,16 @@ export function provideSettings(storage: Storage) {
     ScreenOrientation,NativeStorage,
     Device,AppAvailability,InAppBrowser,
     MediaCapture,
-    DocumentViewer,
-    FileTransfer,
-    FileOpener,
-    File,
+    Network,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiVimeoProvider,
     EmailComposer,
     CallNumber,
-    GoogleMaps,GooglePlus,
+    GooglePlus,
     DirectorioProvider,
     WordpressProvider,    
-    SedesProvider,
-    CalendarioProvider,
     CunapiProvider,
     OneSignal,
     PushnotificationProvider,

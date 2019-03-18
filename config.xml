@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.cebiac.appCun" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CUNMóvil Lite</name>
-    <description>An awesome Ionic/Cordova app.</description>
+<widget id="co.corporacionunificadan.cunmovil" version="0.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CUN Móvil Lite</name>
+    <description>Acceso rápido y fácil para los estudiantes CUN.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -12,11 +12,11 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="ScrollEnabled" value="false" />
-    <preference name="FadeSplashScreenDuration" value="300" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="FadeSplashScreenDuration" value="3000" />
+    <preference name="SplashScreenDelay" value="0" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="FadeSplashScreen" value="true" />
-    <preference name="ShowSplashScreen" value="true" />
+    <preference name="ShowSplashScreen" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -80,7 +80,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
-    <plugin name="cordova-plugin-streaming-media" spec="^2.1.2" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-appavailability" spec="^0.4.2" />
@@ -91,9 +90,6 @@
     <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
-    </plugin>
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>We want your location! Best regards NSA</string>
     </edit-config>
@@ -102,17 +98,12 @@
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.2.1">
         <variable name="OKHTTP_VERSION" value="3.+" />
     </plugin>
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <plugin name="cordova-plugin-filechooser" spec="^1.0.1" />
-    <plugin name="cordova-plugin-filepath" spec="^1.4.2" />
-    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <allow-navigation href="http://192.168.173.1:8100" />
     <allow-navigation href="http://192.168.137.1:8100" />
-    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.41595466370-m1rp1tndq8ub6d74ugh7ma4jjuuga3m6" />
-    </plugin>
     <allow-navigation href="http://192.168.56.1:8100" />
-    <plugin name="cordova-plugin-document-viewer" spec="^0.9.10" />
+    <plugin name="cordova-plugin-streaming-media" spec="^2.1.2" />
+    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.846916511719-mtlqe2kt40jgup5muah3opf3arfp3o11" />
+    </plugin>
     <engine name="android" spec="7.1.4" />
 </widget>

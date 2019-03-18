@@ -24,6 +24,11 @@
     -webkit-perspective: 400;
             perspective: 400;
   }
+
+  .swiper-pagination-bullet-active {
+    background: color($colors,secondary);
+    opacity: 1;
+    }
   
   .plane {
     width: 120px;

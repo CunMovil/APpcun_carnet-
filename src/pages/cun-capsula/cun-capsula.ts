@@ -69,7 +69,7 @@ export class CunCapsulaPage {
         });
         toast.present();
         toast.onDidDismiss(()=> {
-          this.navCtrl.setRoot('MenuCunPage');
+          this.navCtrl.setRoot('MenuslidesPage');
         })  
       },() => {
         loader1.dismiss();
@@ -236,7 +236,7 @@ export class CunCapsulaPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 
   doRefresh(refresher) {  

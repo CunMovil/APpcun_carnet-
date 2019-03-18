@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import { FileOpener } from '@ionic-native/file-opener';
-import { Platform } from 'ionic-angular';
-import { File } from '@ionic-native/file';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the MispagosPage page.
@@ -20,33 +16,41 @@ import { File } from '@ionic-native/file';
   templateUrl: 'mispagos.html',
 })
 export class MispagosPage {
-  pdfObj = null;
+
+  
+  public pagosBot: boolean = false;
+  public pagosTitulo:string = 'Mis Pagos';
+  
   constructor (
                 public  navCtrl: NavController,
                 public  navParams: NavParams,
-                private inAppBrowser:InAppBrowser,
-                private alertCtrl : AlertController,
-                private document : DocumentViewer,
-                private transfer : FileTransfer,
-                private fileOpener: FileOpener,
-                private Platform: Platform,
-                private File:File
+                public InAppBrowser: InAppBrowser,
+                private nativeStorage:NativeStorage,
+                private toastCtrl:ToastController
               ) {
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MispagosPage');
+                this.nativeStorage.getItem('network').then(network =>{
+     
+                  if(!network){
+                    this.toastCtrl.create({
+                      message:'Conéctate a una red para obtener tus datos.',
+                      position:'bottom',
+                      duration:3000
+                    }).present();
+                    this.navCtrl.setRoot('MenuslidesPage');
+                  }
+                })
   }
 
   goHome(){
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 
   pagosPecLink() {
-    this.inAppBrowser.create("https://botondepago.cun.edu.co:8443/BotonPago","_blank",);
+    this.InAppBrowser.create("https://botondepago.cun.edu.co:8443/BotonPago","_blank", 'location=no');
   }
 
   estadoCuenta() {
-    this.inAppBrowser.create("https://plataformas.cun.edu.co/estadocuenta/","_blank",);
+    this.InAppBrowser.create("https://plataformas.cun.edu.co/estadocuenta/","_blank", 'location=no'); 
   }
 }

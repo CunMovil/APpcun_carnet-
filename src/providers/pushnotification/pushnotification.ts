@@ -28,7 +28,7 @@ export class PushnotificationProvider {
 
   initNotification() {
     if (this.Platform.is('cordova')) {
-      this.oneSignal.startInit('23154f20-404c-4127-ad54-7622ef56481f', '528719470511');
+      this.oneSignal.startInit('23154f20-404c-4127-ad54-7622ef56481f', '846916511719');
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
       this.oneSignal.handleNotificationOpened().subscribe((res) => {
         this.nativeStorage.remove('badge')
@@ -37,7 +37,6 @@ export class PushnotificationProvider {
             subTitle: res.notification.payload.body,         
         });
         NotificacionPush.present();
-          //alert(res.notification.payload.title+'/'+ res.notification.payload.body);
       });    
       this.oneSignal.endInit();
     } else {

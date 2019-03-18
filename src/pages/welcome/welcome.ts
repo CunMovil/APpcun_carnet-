@@ -25,7 +25,7 @@ export class WelcomePage {
   }
 
   menuCun(){
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 
   terminos(){

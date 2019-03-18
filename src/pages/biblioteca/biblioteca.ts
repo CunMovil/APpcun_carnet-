@@ -17,29 +17,20 @@ export class BibliotecaPage {
   constructor (
                 public navCtrl: NavController,
                 public navParams: NavParams,
-                private inAppBrowser:InAppBrowser,
+                private InAppBrowser:InAppBrowser,
                 private alertCtrl : AlertController) {
   }
 
   bibvirtual() {
-    this.inAppBrowser.create("https://zproxy.cun.edu.co:2443/login","_blank",)  
+    this.InAppBrowser.create("https://zproxy.cun.edu.co:2443/login","_blank",'location=no')
   }
 
   bibcat() {
-    let doc = document.getElementById('frame');
-    doc.innerHTML = "<iframe class='iframeBiblioteca' src='http://biblioteca.cun.edu.co:81/uhtbin/cgisirsi/EOvL2oiJkh/CENTRAL/0/49' frameBorder='0'></iframe>"
-    this.bibliotecaBotones= true;
-    
-    this.BibliotecaTitulo = "Catalogo";
-  }
-
-  closeIframe() {    
-    this.bibliotecaBotones= false;
-    this.BibliotecaTitulo = "Biblioteca";
+    this.InAppBrowser.create("http://biblioteca.cun.edu.co:81/uhtbin/cgisirsi/EOvL2oiJkh/CENTRAL/0/49","_blank",'location=no')
   }
 
   goHome() {
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   }
 
   showInfo() {

@@ -4,7 +4,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, AlertController, PopoverController, LoadingController } from 'ionic-angular';
 import QRCode from 'qrcode';
 import { Slides } from 'ionic-angular';
-import { poliza } from '../index';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { LottieAnimationViewModule } from 'lottie-angular2';   
 
@@ -62,9 +61,7 @@ export class CarnePage {
     this.anim = anim;
     console.log(anim);
     this.anim.stop();
-  }
-
- 
+  } 
 
   stop() {
     this.anim.stop();
@@ -91,8 +88,6 @@ export class CarnePage {
         loading.dismiss();
 
         if(res['mensaje']){
-          this.slides.lockSwipes(true);
-          this.slides.freeMode = false;
           this.toastCtrl.create({
             message:res['mensaje'],
             position:'bottom',
@@ -112,8 +107,6 @@ export class CarnePage {
         }
       },err =>{
         loading.dismiss()
-        this.slides.lockSwipes(true);
-        this.slides.freeMode = false;
         this.toastCtrl.create({
           message:'Conéctate a una red para obtener tus datos.',
           position:'bottom',
@@ -155,7 +148,7 @@ export class CarnePage {
   
 
   goHome(){
-    this.navCtrl.setRoot('MenuCunPage')
+    this.navCtrl.setRoot('MenuslidesPage')
   };
 
   dataReturn(){

@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-navbar color="primary" >
+  <ion-navbar>
     <ion-buttons end>
       <button icon-only ion-button (click)="goHome()">
         <ion-avatar >
@@ -15,10 +15,11 @@
   <div id="mp3_player">  
     <canvas id="analyzer"></canvas> 
   </div>
-  <div class="iconoApagar" (click)="play()" [hidden]="prueba"  >
+  <div class="iconoApagar" (click)="startAudio()" [hidden]="prueba"  >
     <img class="imgApagar" name="play"  src="assets/img/apagado.png">
   </div> 
-  <div class="iconoApagar" (click)="pause()" *ngIf="prueba">
+  <div class="iconoApagar" (click)="stopAudio()" *ngIf="prueba">
     <img class="imgApagar" name="pause"  src="assets/img/encendido.png">
   </div> 
 </ion-content>
+

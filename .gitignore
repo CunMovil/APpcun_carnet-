@@ -34,3 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 /nbproject/private/
+build.json
+cunmovillite.keystore
+google-services.json
